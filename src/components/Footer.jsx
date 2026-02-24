@@ -33,68 +33,52 @@ const Footer = () => {
 
   const footerLinks = {
     company: [
-      { name: 'About Us', path: '/about' },
-      { name: 'Latest Blog', path: '/blog' },
+      { name: 'About us', path: '/about' },
+      { name: 'Latest blog', path: '/blog' },
       { name: 'Contact', path: '/contact' },
     ],
     services: [
-      { name: 'Washing Machine', path: '/service/washing-machine' },
+      { name: 'Washing machine', path: '/service/washing-machine' },
       { name: 'Refrigerator', path: '/service/refrigerator' },
-      { name: 'Air Conditioner', path: '/service/air-conditioner' },
+      { name: 'Air conditioner', path: '/service/air-conditioner' },
       { name: 'Television', path: '/service/television' },
-      { name: 'Water Purifier', path: '/service/water-purifier' },
-      { name: 'Kitchen Chimney', path: '/service/kitchen-chimney' },
+      { name: 'Water purifier', path: '/service/water-purifier' },
+      { name: 'Kitchen chimney', path: '/service/kitchen-chimney' },
     ],
     support: [
-      { name: 'Privacy Policy', path: '/privacy-policy' },
-      { name: 'Terms of Service', path: '/terms-of-service' },
-      { name: 'Refund Policy', path: '/refund-policy' },
-      { name: 'Cookie Policy', path: '/cookie-policy' },
+      { name: 'Privacy policy', path: '/privacy-policy' },
+      { name: 'Terms of service', path: '/terms-of-service' },
+      { name: 'Refund policy', path: '/refund-policy' },
+      { name: 'Cookie policy', path: '/cookie-policy' },
       { name: 'Disclaimer', path: '/disclaimer' },
     ]
   };
 
   return (
-    <footer className="relative bg-white pt-16 pb-8 overflow-hidden border-t border-gray-50 w-full">
-      <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-emerald-50/50 rounded-full blur-[120px] -mr-48 -mt-48 pointer-events-none" />
-      
+    <footer className="relative bg-white pt-20 pb-10 border-t border-gray-100 w-full overflow-hidden">
       <div className="w-full px-6 md:px-12 lg:px-20 relative z-10">
         
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 mb-16 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-12 mb-20">
           {/* Brand Section */}
-          <div className="lg:col-span-4 space-y-8">
-            <Link to="/" className="flex items-center gap-3 group flex-shrink-0">
-              <div className="relative">
-                <div className="absolute inset-0 bg-emerald-500 blur-xl opacity-20 group-hover:opacity-40 transition-opacity" />
-                <div className="relative bg-gray-950 w-12 h-12 rounded-[18px] flex items-center justify-center transform group-hover:-rotate-6 transition-transform duration-500 shadow-2xl">
-                  <Zap className="text-emerald-500" size={22} fill="currentColor" />
-                </div>
-              </div>
-              <div className="flex flex-col leading-none">
-                <h2 className="text-xl font-black tracking-tighter text-gray-950 uppercase">
-                  APPLIANCE<span className="text-emerald-600">MANIA</span>
-                </h2>
-                <div className="flex items-center gap-1.5 mt-1">
-                  <div className="w-5 h-[2px] bg-amber-500 rounded-full" />
-                  <span className="text-[7px] font-black tracking-[0.3em] text-gray-400 uppercase">Repair Services</span>
-                </div>
-              </div>
+          <div className="lg:col-span-4 flex flex-col items-start">
+            <Link to="/" className="flex items-center gap-4 group mb-10">
+              <img src="/logo-rok.png" alt="ApplianceRookies" className="h-12 w-auto object-contain transition-transform duration-500 group-hover:scale-105" />
             </Link>
-            <p className="text-gray-500 text-sm font-medium leading-relaxed max-w-sm uppercase tracking-widest text-[11px]">
-              Your trusted partner for high-end appliance repairs. Delivering precision and reliability since 2026.
+            <p className="text-gray-400 text-[15px] font-medium leading-relaxed max-w-sm mb-10">
+              Your trusted partner for high-quality appliance repairs. We deliver precision and reliability to every home since 2026.
             </p>
-            <div className="pt-4 flex flex-col gap-4 border-t border-gray-50">
-              <div className="flex items-center gap-3 group">
-                <div className="w-8 h-8 rounded-lg bg-gray-50 flex items-center justify-center text-emerald-600 group-hover:bg-emerald-600 group-hover:text-white transition-all">
-                  <Mail size={16} />
+            <div className="space-y-5">
+              <div className="flex items-center gap-4 group">
+                <div className="w-10 h-10 rounded-xl bg-gray-50 flex items-center justify-center text-orange-600 group-hover:bg-orange-600 group-hover:text-white transition-all">
+                  <Mail size={18} />
                 </div>
-                <a href="mailto:info@appliancemania.shop" className="text-xs font-black text-gray-950 hover:text-emerald-600 transition-colors">info@appliancemania.shop</a>
+                <a href="mailto:info@appliancerookies.shop" className="text-sm font-bold text-gray-950 hover:text-orange-600 transition-colors">info@appliancerookies.shop</a>
               </div>
-              <div className="flex items-start gap-3 group">
-                <div className="w-8 h-8 rounded-lg bg-gray-50 flex items-center justify-center text-amber-500 group-hover:bg-amber-500 group-hover:text-white transition-all shrink-0">
-                  <MapPin size={16} />
+              <div className="flex items-start gap-4 group">
+                <div className="w-10 h-10 rounded-xl bg-gray-50 flex items-center justify-center text-orange-600 group-hover:bg-orange-600 group-hover:text-white transition-all">
+                  <MapPin size={18} />
                 </div>
-                <p className="text-xs font-black text-gray-950 uppercase tracking-tighter leading-tight pt-1">
+                <p className="text-sm font-bold text-gray-950 leading-tight pt-2">
                   B. W. Cooper, New Orleans, LA, USA
                 </p>
               </div>
@@ -102,35 +86,35 @@ const Footer = () => {
           </div>
 
           {/* Links Grid */}
-          <div className="lg:col-span-5 grid grid-cols-2 md:grid-cols-3 gap-8">
+          <div className="lg:col-span-5 grid grid-cols-2 md:grid-cols-3 gap-10">
             <div>
-              <h4 className="text-[10px] font-black text-gray-400 uppercase tracking-[0.3em] mb-6">Company</h4>
-              <ul className="space-y-3">
+              <h4 className="text-[11px] font-bold text-gray-400 uppercase tracking-[0.3em] mb-8">Company</h4>
+              <ul className="space-y-4">
                 {footerLinks.company.map(link => (
                   <li key={link.name}>
-                    <Link to={link.path} className="text-gray-500 hover:text-emerald-600 font-bold text-xs uppercase tracking-widest transition-colors flex items-center gap-1 group">
-                      {link.name} <ArrowUpRight size={10} className="opacity-0 group-hover:opacity-100 transition-all" />
+                    <Link to={link.path} className="text-gray-500 hover:text-orange-600 font-bold text-[13px] transition-colors flex items-center gap-1 group">
+                      {link.name} <ArrowUpRight size={12} className="opacity-0 group-hover:opacity-100 transition-all -translate-y-0.5" />
                     </Link>
                   </li>
                 ))}
               </ul>
             </div>
             <div>
-              <h4 className="text-[10px] font-black text-gray-400 uppercase tracking-[0.3em] mb-6">Services</h4>
-              <ul className="space-y-3">
+              <h4 className="text-[11px] font-bold text-gray-400 uppercase tracking-[0.3em] mb-8">Services</h4>
+              <ul className="space-y-4">
                 {footerLinks.services.map(link => (
                   <li key={link.name}>
-                    <Link to={link.path} className="text-gray-500 hover:text-emerald-600 font-bold text-xs uppercase tracking-widest transition-colors">{link.name}</Link>
+                    <Link to={link.path} className="text-gray-500 hover:text-orange-600 font-bold text-[13px] transition-colors">{link.name}</Link>
                   </li>
                 ))}
               </ul>
             </div>
             <div>
-              <h4 className="text-[10px] font-black text-gray-400 uppercase tracking-[0.3em] mb-6">Support</h4>
-              <ul className="space-y-3">
+              <h4 className="text-[11px] font-bold text-gray-400 uppercase tracking-[0.3em] mb-8">Support</h4>
+              <ul className="space-y-4">
                 {footerLinks.support.map(link => (
                   <li key={link.name}>
-                    <Link to={link.path} className="text-gray-500 hover:text-emerald-600 font-bold text-xs uppercase tracking-widest transition-colors">{link.name}</Link>
+                    <Link to={link.path} className="text-gray-500 hover:text-orange-600 font-bold text-[13px] transition-colors">{link.name}</Link>
                   </li>
                 ))}
               </ul>
@@ -139,34 +123,31 @@ const Footer = () => {
 
           {/* Newsletter Section */}
           <div className="lg:col-span-3">
-            <div className="bg-gray-50 rounded-[32px] p-8 border border-gray-100 relative overflow-hidden">
-               <div className="absolute top-0 right-0 w-32 h-32 bg-emerald-600/5 blur-[40px]" />
+            <div className="bg-gray-50 rounded-[32px] p-10 border border-gray-100 relative overflow-hidden">
                <div className="relative z-10">
-                 <div className="flex items-center gap-2 mb-4">
-                   <Sparkles size={16} className="text-emerald-600" />
-                   <h3 className="text-gray-950 text-sm font-black uppercase tracking-tight">care Journal</h3>
+                 <div className="flex items-center gap-2 mb-6">
+                   <Sparkles size={18} className="text-orange-600" />
+                   <h3 className="text-gray-950 text-sm font-black uppercase tracking-widest">Newsletter</h3>
                  </div>
-                 <form onSubmit={handleSubscribe} className="space-y-3">
-                   <div className="relative">
-                     <input 
-                       required
-                       type="email" 
-                       value={email}
-                       onChange={(e) => setEmail(e.target.value)}
-                       placeholder="email@example.com" 
-                       className="w-full bg-white border border-gray-100 rounded-xl px-5 py-3 text-gray-950 text-xs font-black uppercase tracking-widest outline-none focus:border-emerald-500 transition-all shadow-sm placeholder:text-gray-300"
-                     />
-                   </div>
+                 <form onSubmit={handleSubscribe} className="space-y-4">
+                   <input 
+                     required
+                     type="email" 
+                     value={email}
+                     onChange={(e) => setEmail(e.target.value)}
+                     placeholder="Enter your email" 
+                     className="w-full bg-white border border-gray-200 rounded-xl px-6 py-4 text-gray-950 text-[13px] font-bold outline-none focus:border-orange-600 transition-all placeholder:text-gray-300"
+                   />
                    <button 
                      disabled={isSubmitting}
-                     className="w-full bg-gray-950 hover:bg-emerald-600 text-white py-3.5 rounded-xl font-black text-[10px] uppercase tracking-[0.2em] transition-all cursor-pointer disabled:opacity-50 flex items-center justify-center gap-2 group/btn shadow-lg shadow-gray-950/10"
+                     className="w-full bg-gray-950 hover:bg-orange-600 text-white py-4 rounded-xl font-bold text-[13px] transition-all cursor-pointer disabled:opacity-50 flex items-center justify-center gap-2 group/btn shadow-xl shadow-black/5"
                    >
-                     {isSubmitting ? '...' : <>Join <ArrowRight size={14} className="group-hover/btn:translate-x-1 transition-transform" /></>}
+                     {isSubmitting ? '...' : <>Join now <ArrowRight size={16} className="group-hover/btn:translate-x-1 transition-transform" /></>}
                    </button>
                  </form>
                  {isSuccess && (
-                   <p className="mt-4 text-[9px] font-black text-emerald-600 uppercase tracking-widest flex items-center gap-1">
-                     <CheckCircle2 size={12} /> Successfully Enrolled
+                   <p className="mt-4 text-[10px] font-bold text-orange-600 uppercase tracking-widest flex items-center gap-2">
+                     <CheckCircle2 size={14} /> Successfully enrolled
                    </p>
                  )}
                </div>
@@ -175,21 +156,21 @@ const Footer = () => {
         </div>
 
         {/* Bottom Bar */}
-        <div className="flex flex-col md:flex-row justify-between items-center pt-8 border-t border-gray-50 gap-8">
-          <div className="flex flex-wrap justify-center gap-6">
-            <div className="flex items-center gap-2.5 px-4 py-2 bg-gray-50 border border-gray-100 rounded-full">
-               <ShieldCheck size={14} className="text-emerald-600" />
-               <span className="text-[9px] font-black text-gray-950 uppercase tracking-[0.2em]">SSL SECURED</span>
+        <div className="flex flex-col md:flex-row justify-between items-center pt-10 border-t border-gray-100 gap-10">
+          <div className="flex flex-wrap justify-center gap-8">
+            <div className="flex items-center gap-3">
+               <ShieldCheck size={18} className="text-orange-600" />
+               <span className="text-[10px] font-bold text-gray-950 uppercase tracking-widest">SSL secured</span>
             </div>
-            <div className="flex items-center gap-2.5 px-4 py-2 bg-gray-50 border border-gray-100 rounded-full">
-               <CheckCircle2 size={14} className="text-amber-500" />
-               <span className="text-[9px] font-black text-gray-950 uppercase tracking-[0.2em]">MASTER CERTIFIED</span>
+            <div className="flex items-center gap-3">
+               <CheckCircle2 size={18} className="text-orange-600" />
+               <span className="text-[10px] font-bold text-gray-950 uppercase tracking-widest">Master certified</span>
             </div>
           </div>
           
           <div className="text-center md:text-right">
-            <p className="text-gray-400 text-[10px] font-bold uppercase tracking-[0.2em]">
-              &copy; {currentYear} APPLIANCEMANIA. Built with Precision.
+            <p className="text-gray-400 text-[11px] font-bold uppercase tracking-widest">
+              &copy; {currentYear} ApplianceRookies. built with precision.
             </p>
           </div>
         </div>
@@ -200,3 +181,4 @@ const Footer = () => {
 };
 
 export default Footer;
+

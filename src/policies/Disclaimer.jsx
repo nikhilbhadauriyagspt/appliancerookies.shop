@@ -7,23 +7,34 @@ const Disclaimer = () => {
 
   return (
     <div className="bg-white min-h-screen pt-44 pb-24">
-      <div className="container mx-auto px-4 max-w-5xl">
-        <h1 className="text-4xl md:text-5xl font-heading font-bold  text-green-700 mb-4 uppercase tracking-tight">Disclaimer</h1>
-        <p className="text-gray-500 mb-12 italic">Last updated: February 21, 2026</p>
+      <div className="container mx-auto px-6 max-w-5xl">
+        {/* Refined Heading */}
+        <div className="mb-16">
+          <div className="flex items-center gap-3 mb-6">
+            <div className="w-8 h-[1.5px] bg-orange-600 rounded-full" />
+            <span className="text-[11px] font-bold text-orange-600 tracking-widest uppercase">
+              Legal notice
+            </span>
+          </div>
+          <h1 className="text-4xl md:text-6xl font-black text-gray-950 tracking-tight leading-tight mb-6">
+            Disclaimer for <span className="text-orange-600 italic font-medium lowercase">appliancerookies.</span>
+          </h1>
+          <p className="text-gray-400 text-sm font-medium italic">Last updated: February 25, 2026</p>
+        </div>
 
         <div className="prose prose-lg max-w-none text-gray-700 leading-relaxed space-y-8">
-          <section className="bg-blue-50/50 p-8 rounded-3xl border border-blue-100/50">
-            <h2 className="text-2xl font-bold text-gray-900 mb-4 uppercase">General Disclaimer</h2>
+          <section className="bg-gray-50 p-8 rounded-3xl border border-gray-100">
+            <h2 className="text-2xl font-bold text-gray-950 mb-4 tracking-tight">General disclaimer</h2>
             <p>
-              The information provided by <strong>appliancemania</strong> ("we," "us," or "our") on <a href="https://appliancemania.shop/" className="text-primary hover:underline">https://appliancemania.shop/</a> (the "Site") is for general informational purposes only. All information on the Site is provided in good faith, however we make no representation or warranty of any kind, express or implied, regarding the accuracy, adequacy, validity, reliability, availability, or completeness of any information on the Site.
+              The information provided by <strong>appliancerookies</strong> ("we," "us," or "our") on <a href="https://appliancerookies.shop/" className="text-orange-600 hover:underline">https://appliancerookies.shop/</a> (the "Site") is for general informational purposes only. All information on the Site is provided in good faith, however we make no representation or warranty of any kind, express or implied, regarding the accuracy, adequacy, validity, reliability, availability, or completeness of any information on the Site.
             </p>
-            <p className="font-bold text-gray-900 mt-4">
+            <p className="font-bold text-gray-950 mt-4">
               UNDER NO CIRCUMSTANCE SHALL WE HAVE ANY LIABILITY TO YOU FOR ANY LOSS OR DAMAGE OF ANY KIND INCURRED AS A RESULT OF THE USE OF THE SITE OR RELIANCE ON ANY INFORMATION PROVIDED ON THE SITE. YOUR USE OF THE SITE AND YOUR RELIANCE ON ANY INFORMATION ON THE SITE IS SOLELY AT YOUR OWN RISK.
             </p>
           </section>
 
           <section>
-            <h2 className="text-2xl font-bold text-gray-900 mb-4 uppercase">External Links Disclaimer</h2>
+            <h2 className="text-2xl font-bold text-gray-950 mb-4 tracking-tight">External links disclaimer</h2>
             <p>
               The Site may contain (or you may be sent through the Site) links to other websites or content belonging to or originating from third parties or links to websites and features in banners or other advertising. Such external links are not investigated, monitored, or checked for accuracy, adequacy, validity, reliability, availability, or completeness by us.
             </p>
@@ -33,7 +44,7 @@ const Disclaimer = () => {
           </section>
 
           <section className="bg-gray-50 p-8 rounded-3xl border border-gray-100">
-            <h2 className="text-2xl font-bold text-gray-900 mb-4 uppercase">Professional Disclaimer</h2>
+            <h2 className="text-2xl font-bold text-gray-950 mb-4 tracking-tight">Professional disclaimer</h2>
             <p>
               The Site cannot and does not contain appliance repair advice. The care information is provided for general informational and educational purposes only and is not a substitute for professional advice. Accordingly, before taking any actions based upon such information, we encourage you to consult with the appropriate professionals.
             </p>
@@ -43,7 +54,7 @@ const Disclaimer = () => {
           </section>
 
           <section>
-            <h2 className="text-2xl font-bold text-gray-900 mb-4 uppercase">Testimonials Disclaimer</h2>
+            <h2 className="text-2xl font-bold text-gray-950 mb-4 tracking-tight">Testimonials disclaimer</h2>
             <p>
               The Site may contain testimonials by users of our services. These testimonials reflect the real-life experiences and opinions of such users. However, the experiences are personal to those particular users, and may not necessarily be representative of all users of our services. We do not claim, and you should not assume, that all users will have the same experiences. YOUR INDIVIDUAL RESULTS MAY VARY.
             </p>
@@ -56,13 +67,13 @@ const Disclaimer = () => {
           </section>
 
           <section className="pt-8 border-t border-gray-100">
-            <h2 className="text-2xl font-bold text-gray-900 mb-4 uppercase">Contact Us</h2>
+            <h2 className="text-2xl font-bold text-gray-950 mb-4 tracking-tight">Contact us</h2>
             <p>If you have any questions regarding this disclaimer, please contact us at:</p>
-            <address className="not-italic bg-gray-50 p-8 rounded-2xl border border-gray-100 mt-4 leading-relaxed font-bold">
-              appliancemania<br />
+            <address className="not-italic bg-gray-50 p-8 rounded-2xl border border-gray-100 mt-4 leading-relaxed font-bold text-gray-950">
+              appliancerookies<br />
               B. W. Cooper, New Orleans, LA, USA<br />
               United States<br />
-              Email: <a href="mailto:info@appliancemania.shop" className="text-primary hover:underline">info@appliancemania.shop</a>
+              Email: <a href="mailto:info@appliancerookies.shop" className="text-orange-600 hover:underline">info@appliancerookies.shop</a>
             </address>
           </section>
         </div>
@@ -72,3 +83,4 @@ const Disclaimer = () => {
 };
 
 export default Disclaimer;
+

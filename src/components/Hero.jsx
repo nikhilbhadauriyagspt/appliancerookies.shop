@@ -1,37 +1,31 @@
 import { useState, useEffect } from 'react';
-import { ArrowRight, Sparkles, ShieldCheck, Zap, Settings, MousePointer2, Phone } from 'lucide-react';
+import { ArrowRight, ShieldCheck, Zap, Settings } from 'lucide-react';
 import BookingModal from './BookingModal';
 
 const slides = [
   {
     id: "01",
-    tag: "Certified Appliance",
-    title: "Revolutionizing",
-    highlight: "Washing Care.",
-    desc: "Precision motor calibration and drum restoration using genuine manufacturer components.",
-    image: "/hero-washing.jpg",
-    accent: "text-emerald-500",
-    color: "emerald"
+    tag: "Expert help for your home",
+    title: "Making your",
+    highlight: "washing better.",
+    desc: "We fix every motor and drum issue using real manufacturer parts so your machine washes perfectly and stays quiet for years to come. Our experts ensure your laundry routine is never interrupted by unexpected breakdowns.",
+    image: "/hero-washing.jpg"
   },
   {
     id: "02",
-    tag: "Cooling appliance cares",
-    title: "Mastering Pro",
-    highlight: "Refrigerator Fix.",
-    desc: "Advanced thermodynamic diagnostics and eco-friendly gas recharging for all premium brands.",
-    image: "/hero-refri.jpg",
-    accent: "text-amber-500",
-    color: "amber"
+    tag: "Keeping your food fresh",
+    title: "Fixing your",
+    highlight: "fridge perfectly.",
+    desc: "We find the exact cooling problem and refill the gas safely for all top brands to keep your food fresh and healthy. From simple seal changes to complex cooling fixes, we handle everything at your doorstep.",
+    image: "/hero-refri.jpg"
   },
   {
     id: "03",
-    tag: "Kitchen Masters",
-    title: "High-Performance",
-    highlight: "Oven Repair.",
-    desc: "Safety-first care diagnostics for modern heating systems and digital controls.",
-    image: "/hero-cook.jpg",
-    accent: "text-emerald-500",
-    color: "emerald"
+    tag: "Helping you in the kitchen",
+    title: "Getting your",
+    highlight: "oven working.",
+    desc: "We carefully check your heating systems and control buttons to make sure everything is safe to use and works like new. Whether you are baking or cooking, our fast repair service makes sure your kitchen stays the heart of your home.",
+    image: "/hero-cook.jpg"
   }
 ];
 
@@ -47,150 +41,137 @@ const Hero = () => {
   }, []);
 
   return (
-    <section className="relative h-screen w-full overflow-hidden bg-gray-950">
-      {/* 1. Full-Screen Background Visuals */}
-      {slides.map((slide, idx) => (
-        <div 
-          key={idx}
-          className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${
-            idx === current ? 'opacity-100' : 'opacity-0'
-          }`}
-        >
-          {/* Cinematic Zoom Image */}
-          <div className="absolute inset-0 scale-110 animate-ken-burns">
-            <img 
-              src={slide.image} 
-              alt={slide.title}
-              className="w-full h-full object-cover"
-            />
-          </div>
-          {/* Immersive Overlays */}
-          <div className="absolute inset-0 bg-gradient-to-r from-gray-950/90 via-gray-950/40 to-transparent" />
-          <div className="absolute inset-0 bg-black/10" />
-        </div>
-      ))}
-
-      {/* 2. Content Layer */}
-      <div className="relative z-20 h-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center">
-        <div className="max-w-2xl">
-          <div className="inline-flex items-center gap-2.5 px-4 py-2 rounded-full bg-white/5 backdrop-blur-md border border-white/10 mb-8 animate-in fade-in slide-in-from-left-8 duration-700">
-            <Sparkles size={12} className="text-emerald-400" />
-            <span className="text-[9px] font-black uppercase tracking-[0.3em] text-white/70">{slides[current].tag}</span>
-          </div>
-
-          <div className="relative mb-8 overflow-hidden">
-            {slides.map((slide, idx) => (
-              <div 
-                key={idx}
-                className={`transition-all duration-1000 transform ${
-                  idx === current ? 'translate-y-0 opacity-100' : 'translate-y-full opacity-0 absolute inset-0'
-                }`}
-              >
-                <h1 className="text-4xl md:text-7xl font-black text-white tracking-tighter leading-[0.9] uppercase">
-                  {slide.title} <br />
-                  <span className={`${slide.accent} italic`}>{slide.highlight}</span>
-                </h1>
-              </div>
-            ))}
-          </div>
-
-          <p className="text-gray-400 text-sm md:text-base font-medium leading-relaxed mb-10 max-w-lg uppercase tracking-widest animate-in fade-in slide-in-from-bottom-8 duration-1000">
-            {slides[current].desc}
-          </p>
-
-          <div className="flex flex-col sm:flex-row items-center gap-5 animate-in fade-in slide-in-from-bottom-12 duration-1000">
-            <button 
-              onClick={() => setIsModalOpen(true)}
-              className="group relative w-full sm:w-auto px-10 py-5 bg-emerald-600 text-white rounded-2xl font-black text-[10px] uppercase tracking-[0.3em] hover:bg-white hover:text-gray-950 transition-all shadow-2xl shadow-emerald-600/20 active:scale-95 flex items-center justify-center gap-3 cursor-pointer"
+    <section className="relative h-screen min-h-[750px] w-full bg-white flex flex-col pt-[88px] overflow-hidden">
+      <div className="flex-grow flex flex-col lg:flex-row relative">
+        
+        {/* Left: Immersive Visual Area - Seamless Blending */}
+        <div className="w-full lg:w-[55%] relative min-h-[400px] lg:min-h-0 bg-white">
+          {slides.map((slide, idx) => (
+            <div 
+              key={idx}
+              className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${
+                idx === current ? 'opacity-100 z-10' : 'opacity-0 z-0'
+              }`}
             >
-              Book Appliance Care <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
-            </button>
+              <img 
+                src={slide.image} 
+                alt={slide.title}
+                className="w-full h-full object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-l from-white via-white/10 to-transparent lg:block hidden" />
+              <div className="absolute inset-0 bg-gradient-to-t from-white via-transparent to-transparent lg:hidden block" />
+            </div>
+          ))}
+          
+          <div className="absolute bottom-12 left-12 hidden md:block z-20">
+            <div className="bg-white/95 backdrop-blur-md p-6 rounded-2xl border border-white shadow-xl flex items-center gap-5">
+              <div className="w-12 h-12 rounded-xl bg-orange-600 flex items-center justify-center text-white">
+                <ShieldCheck size={24} />
+              </div>
+              <div>
+                <div className="text-[10px] font-black text-gray-400 uppercase tracking-widest mb-0.5">Trustworthy help</div>
+                <div className="text-xs font-bold text-gray-950 uppercase">Only original parts</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Right: Refined Content Area */}
+        <div className="w-full lg:w-[45%] flex items-center px-6 sm:px-12 lg:px-20 py-16 lg:py-0 bg-white">
+          <div className="w-full">
+            <div className="flex items-center gap-3 mb-8">
+              <div className="w-8 h-[2px] bg-orange-600 rounded-full" />
+              <span className="text-[11px] font-bold text-orange-600 tracking-[0.2em] uppercase">
+                {slides[current].tag}
+              </span>
+            </div>
+            
+            <div className="relative min-h-[280px] md:min-h-[320px] mb-8">
+              {slides.map((slide, idx) => (
+                <div 
+                  key={idx}
+                  className={`transition-all duration-700 ease-[cubic-bezier(0.23,1,0.32,1)] ${
+                    idx === current ? 'opacity-100 translate-y-0 relative z-10' : 'opacity-0 translate-y-8 absolute inset-0 z-0 pointer-events-none'
+                  }`}
+                >
+                  <h1 className="text-4xl md:text-[56px] lg:text-[64px] font-black text-gray-950 leading-[1.1] mb-8 tracking-tight">
+                    {slide.title} <br />
+                    <span className="text-orange-600 italic">{slide.highlight}</span>
+                  </h1>
+                  <p className="text-gray-500 text-sm md:text-base font-medium leading-relaxed max-w-md">
+                    {slide.desc}
+                  </p>
+                </div>
+              ))}
+            </div>
+
+            <div className="flex flex-col sm:flex-row items-center gap-8 pt-4">
+              <button 
+                onClick={() => setIsModalOpen(true)}
+                className="w-full sm:w-auto px-10 py-5 bg-gray-950 text-white font-bold text-[12px] uppercase tracking-[0.2em] hover:bg-orange-600 transition-all cursor-pointer flex items-center justify-center gap-3 rounded-xl shadow-xl shadow-gray-950/5"
+              >
+                Book appliance care <ArrowRight size={18} />
+              </button>
+              
+              <div className="flex items-center gap-2.5">
+                {slides.map((_, idx) => (
+                  <button 
+                    key={idx}
+                    onClick={() => setCurrent(idx)}
+                    className={`h-1.5 rounded-full transition-all duration-500 ${idx === current ? 'w-10 bg-orange-600' : 'w-4 bg-gray-100 hover:bg-gray-200'}`}
+                  />
+                ))}
+              </div>
+            </div>
           </div>
         </div>
       </div>
 
-      {/* 3. Immersive Navigation (Side Dots) */}
-      <div className="absolute right-8 md:right-12 top-1/2 -translate-y-1/2 z-30 flex flex-col gap-8">
-        {slides.map((_, idx) => (
-          <button 
-            key={idx}
-            onClick={() => setCurrent(idx)}
-            className="group flex items-center gap-4 cursor-pointer"
-          >
-            <div className={`h-[1px] transition-all duration-700 ${idx === current ? 'w-10 bg-emerald-500' : 'w-4 bg-white/20 group-hover:bg-white/50'}`} />
-            <span className={`text-[9px] font-black transition-all duration-700 ${idx === current ? 'text-white opacity-100' : 'text-white/20 opacity-0 group-hover:opacity-100'}`}>
-              0{idx + 1}
-            </span>
-          </button>
-        ))}
-      </div>
-
-      {/* 4. Bottom Global Dashboard */}
-      <div className="absolute bottom-0 left-0 w-full z-30 bg-gradient-to-t from-gray-950 to-transparent">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-10 border-t border-white/5 pt-10">
-            <div className="flex items-center gap-4">
-              <div className="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center text-emerald-500 border border-white/5">
-                <ShieldCheck size={18} />
-              </div>
-              <div>
-                <div className="text-[9px] font-black text-white uppercase tracking-widest mb-0.5">Warranty</div>
-                <div className="text-[8px] font-bold text-gray-500 uppercase tracking-widest">90-Day Coverage</div>
+      {/* Integrated Utility Dashboard */}
+      <div className="bg-gray-50/50 border-t border-gray-100">
+        <div className="max-w-[1440px] mx-auto px-6 sm:px-12 lg:px-20">
+          <div className="grid grid-cols-2 md:grid-cols-4 items-center">
+            <div className="py-8 flex items-center gap-4">
+              <ShieldCheck className="text-orange-600" size={18} />
+              <div className="flex flex-col">
+                <span className="text-[11px] font-bold text-gray-950 uppercase tracking-wide">Service guarantee</span>
+                <span className="text-[9px] text-gray-400 font-medium uppercase tracking-wider">3 months of support</span>
               </div>
             </div>
-            <div className="flex items-center gap-4">
-              <div className="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center text-amber-500 border border-white/5">
-                <Zap size={18} />
-              </div>
-              <div>
-                <div className="text-[9px] font-black text-white uppercase tracking-widest mb-0.5">Response</div>
-                <div className="text-[8px] font-bold text-gray-500 uppercase tracking-widest">Under 60 Mins</div>
+            <div className="py-8 flex items-center gap-4 border-l border-gray-100 md:pl-10">
+              <Zap className="text-orange-600" size={18} />
+              <div className="flex flex-col">
+                <span className="text-[11px] font-bold text-gray-950 uppercase tracking-wide">Fast help</span>
+                <span className="text-[9px] text-gray-400 font-medium uppercase tracking-wider">Under one hour</span>
               </div>
             </div>
-            <div className="hidden md:flex items-center gap-4">
-              <div className="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center text-emerald-500 border border-white/5">
-                <Settings size={18} />
-              </div>
-              <div>
-                <div className="text-[9px] font-black text-white uppercase tracking-widest mb-0.5">Equipment</div>
-                <div className="text-[8px] font-bold text-gray-500 uppercase tracking-widest">Certified OEM</div>
+            <div className="hidden md:flex items-center gap-4 py-8 border-l border-gray-100 pl-10">
+              <Settings className="text-orange-600" size={18} />
+              <div className="flex flex-col">
+                <span className="text-[11px] font-bold text-gray-950 uppercase tracking-wide">Real parts</span>
+                <span className="text-[9px] text-gray-400 font-medium uppercase tracking-wider">Only original spares</span>
               </div>
             </div>
-            <div className="hidden md:flex items-center justify-end">
+            <div className="hidden md:flex py-8 pl-10 items-center justify-end">
                <button 
                 onClick={() => document.getElementById('repair-solutions')?.scrollIntoView({ behavior: 'smooth' })}
-                className="flex items-center gap-3 px-6 py-3 bg-white/5 backdrop-blur-md border border-white/10 rounded-full text-[9px] font-black text-white uppercase tracking-[0.25em] hover:bg-emerald-600 hover:border-emerald-500 transition-all group cursor-pointer shadow-xl"
+                className="text-[10px] font-bold text-gray-950 hover:text-orange-600 transition-colors flex items-center gap-2 uppercase tracking-widest group"
                >
-                 Explore Solutions <ArrowRight size={14} className="text-emerald-400 group-hover:text-white group-hover:translate-x-1 transition-all" />
+                 Explore solutions <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
                </button>
             </div>
           </div>
         </div>
       </div>
 
-      {/* CSS for Cinematic Motion */}
-      <style dangerouslySetInnerHTML={{ __html: `
-        @keyframes ken-burns {
-          0% { transform: scale(1); }
-          100% { transform: scale(1.15); }
-        }
-        .animate-ken-burns {
-          animation: ken-burns 20s ease-in-out infinite alternate;
-        }
-      `}} />
-
       <BookingModal 
         isOpen={isModalOpen} 
         onClose={() => setIsModalOpen(false)} 
-        serviceTitle="Elite Appliance Care" 
+        serviceTitle="Elite appliance care" 
       />
     </section>
   );
 };
 
 export default Hero;
-
-
-
-
 

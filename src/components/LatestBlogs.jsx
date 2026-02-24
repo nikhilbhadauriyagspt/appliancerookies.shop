@@ -1,81 +1,74 @@
-import { ArrowRight, Calendar, Sparkles, Clock } from 'lucide-react';
+import { ArrowRight, Calendar, Clock } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { blogPosts } from '../blogData';
 
 const LatestBlogs = () => {
-  const posts = blogPosts.slice(0, 3).map((post, idx) => ({
-    ...post,
-    entry: `0${idx + 1}`,
-    read: post.readTime
-  }));
+  const posts = blogPosts.slice(0, 3);
 
   return (
-    <section className="py-24 md:py-32 bg-white relative overflow-hidden" id="insights">
-      {/* Decorative */}
-      <div className="absolute top-0 left-0 w-[500px] h-[500px] bg-emerald-50/50 rounded-full blur-[100px] -ml-48 -mt-48 pointer-events-none" />
-
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+    <section className="py-24 md:py-40 bg-white" id="insights">
+      <div className="max-w-7xl mx-auto px-6 lg:px-8">
         
-        {/* Header Section */}
-        <div className="flex flex-col lg:flex-row justify-between items-end mb-24 gap-10">
-          <div className="max-w-3xl">
-            <div className="inline-flex items-center gap-3 px-5 py-2.5 rounded-full bg-white border border-emerald-100 text-[10px] font-black tracking-[0.3em] text-emerald-600 uppercase mb-8 shadow-sm">
-              <Sparkles size={14} /> The Knowledge Base
-            </div>
-            <h2 className="text-4xl md:text-6xl font-black text-gray-950 tracking-tighter uppercase">
-              Latest Repair <span className="text-emerald-500 italic">Insights.</span>
-            </h2>
+        {/* Header Section: Centered & Refined */}
+        <div className="flex flex-col items-center text-center mb-24 max-w-2xl mx-auto">
+          <div className="flex items-center gap-3 mb-6">
+            <div className="w-6 h-[1.5px] bg-orange-600 rounded-full" />
+            <span className="text-[11px] font-bold text-orange-600 tracking-[0.3em] uppercase">
+              Our blog
+            </span>
+            <div className="w-6 h-[1.5px] bg-orange-600 rounded-full" />
           </div>
-          <Link to="/blog" className="group flex items-center gap-4 px-10 py-5 bg-gray-950 text-white rounded-2xl font-black text-[10px] uppercase tracking-[0.2em] transition-all hover:bg-emerald-600 shadow-xl active:scale-95">
-            View All Posts <ArrowRight size={18} className="group-hover:translate-x-2 transition-transform" />
-          </Link>
+          <h2 className="text-3xl md:text-5xl font-black text-gray-950 tracking-tight leading-tight mb-6">
+            Latest repair <span className="text-orange-600 italic">insights.</span>
+          </h2>
+          <p className="text-gray-400 text-sm md:text-base font-medium leading-relaxed max-w-lg">
+            Read helpful tips and news about keeping your home appliances in perfect condition.
+          </p>
         </div>
 
         {/* Blog Cards Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 lg:gap-16">
           {posts.map((post, idx) => (
             <Link 
               key={idx} 
               to={`/blog/${post.id}`} 
-              className="group relative flex flex-col h-full"
+              className="group flex flex-col h-full"
             >
-              {/* Card Image Stage */}
-              <div className="relative h-[300px] rounded-[48px] overflow-hidden shadow-2xl border-4 border-white transition-all duration-700 group-hover:-translate-y-4 group-hover:shadow-[0_40px_80px_rgba(0,0,0,0.1)]">
-                <img loading="lazy" src={post.image} alt={post.title} className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" />
-                <div className="absolute inset-0 bg-gradient-to-t from-gray-950/40 via-transparent to-transparent" />
-                
-                {/* Float Entry ID */}
-                <div className="absolute top-8 left-8 text-3xl font-black text-white/20 italic group-hover:text-white transition-colors">
-                  {post.entry}
-                </div>
+              {/* Card Image Area */}
+              <div className="relative aspect-[16/10] rounded-[32px] overflow-hidden bg-gray-100 mb-8 shadow-sm transition-all duration-700 group-hover:shadow-2xl group-hover:shadow-orange-600/10 group-hover:-translate-y-1">
+                <img loading="lazy" src={post.image} alt={post.title} className="w-full h-full object-cover transition-transform duration-[1500ms] group-hover:scale-110" />
+                <div className="absolute inset-0 bg-orange-600/0 group-hover:bg-orange-600/5 transition-colors duration-500" />
               </div>
               
               {/* Card Content Area */}
-              <div className="pt-10 px-6 flex flex-col flex-grow">
-                <div className="flex items-center gap-5 text-gray-400 text-[9px] font-black mb-6 uppercase tracking-[0.2em]">
-                  <span className="flex items-center gap-2"><Calendar size={12} className="text-amber-500" /> {post.date}</span>
+              <div className="flex flex-col flex-grow px-2">
+                <div className="flex items-center gap-4 text-gray-400 text-[10px] font-bold mb-4 uppercase tracking-widest">
+                  <span className="flex items-center gap-1.5"><Calendar size={12} className="text-orange-600" /> {post.date}</span>
                   <span className="w-1 h-1 rounded-full bg-gray-200" />
-                  <span className="flex items-center gap-2"><Clock size={12} className="text-emerald-500" /> {post.read} Read</span>
+                  <span className="flex items-center gap-1.5"><Clock size={12} className="text-orange-600" /> {post.readTime}</span>
                 </div>
                 
-                <h3 className="text-xl md:text-2xl font-black text-gray-950 mb-6 leading-[1.1] group-hover:text-emerald-600 transition-colors uppercase tracking-tighter">
+                <h3 className="text-xl md:text-[22px] font-bold text-gray-950 mb-4 leading-tight transition-colors group-hover:text-orange-600">
                   {post.title}
                 </h3>
                 
-                <p className="text-gray-500 text-sm font-medium leading-relaxed mb-8 line-clamp-2 uppercase tracking-wide">
+                <p className="text-gray-500 text-sm font-medium leading-relaxed mb-8 line-clamp-2">
                   {post.excerpt}
                 </p>
                 
-                <div className="mt-auto flex items-center gap-3 text-gray-950 font-black text-[10px] uppercase tracking-[0.3em] group/link">
-                  <span className="relative">
-                    Read Article
-                    <div className="absolute -bottom-1 left-0 w-full h-[2px] bg-emerald-600 transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-500" />
-                  </span>
-                  <ArrowRight size={16} className="text-amber-500 group-hover:translate-x-2 transition-transform" />
+                <div className="mt-auto inline-flex items-center gap-2 text-gray-950 font-bold text-[12px] transition-all group-hover:text-orange-600 group-hover:gap-3">
+                  Read article <ArrowRight size={16} />
                 </div>
               </div>
             </Link>
           ))}
+        </div>
+
+        {/* View All Button */}
+        <div className="mt-20 flex justify-center">
+          <Link to="/blog" className="inline-flex items-center gap-3 px-10 py-5 border-2 border-gray-950 text-gray-950 font-bold text-[13px] hover:bg-gray-950 hover:text-white transition-all rounded-xl active:scale-95 group">
+            View all posts <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
+          </Link>
         </div>
 
       </div>

@@ -1,4 +1,5 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://appliancemania.shop/sitemap.xml
+Sitemap: https://appliancerookies.shop/sitemap.xml
+

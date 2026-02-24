@@ -1,4 +1,4 @@
-import { Search, CalendarCheck, Wrench, ShieldCheck, ArrowRight, Sparkles, CheckCircle2 } from 'lucide-react';
+import { Search, CalendarCheck, Wrench, ShieldCheck, ArrowRight } from 'lucide-react';
 import { useState } from 'react';
 import BookingModal from './BookingModal';
 
@@ -8,85 +8,86 @@ const RepairProcess = () => {
   const steps = [
     {
       id: "01",
-      title: "Selection",
-      desc: "Pick your service.",
-      icon: <Search size={20} />,
-      color: "emerald"
+      title: "Select service",
+      desc: "Pick the machine that needs fixing.",
+      icon: <Search size={22} />
     },
     {
       id: "02",
-      title: "Booking",
-      desc: "Instant matching.",
-      icon: <CalendarCheck size={20} />,
-      color: "amber"
+      title: "Book timing",
+      desc: "Choose a time that works for you.",
+      icon: <CalendarCheck size={22} />
     },
     {
       id: "03",
-      title: "Repair",
-      desc: "Original parts fix.",
-      icon: <Wrench size={20} />,
-      color: "emerald"
+      title: "Expert repair",
+      desc: "We fix it using original parts.",
+      icon: <Wrench size={22} />
     },
     {
       id: "04",
-      title: "Warranty",
-      desc: "90-Day guarantee.",
-      icon: <ShieldCheck size={20} />,
-      color: "amber"
+      title: "Full guarantee",
+      desc: "Enjoy peace of mind for 3 months.",
+      icon: <ShieldCheck size={22} />
     }
   ];
 
   return (
-    <section id="repair-process" className="py-24 md:py-32 bg-white relative overflow-hidden border-y border-gray-50">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="repair-process" className="py-24 md:py-40 bg-white relative overflow-hidden">
+      <div className="max-w-7xl mx-auto px-6 sm:px-12 lg:px-20 relative z-10">
         
-        {/* Simplified Header */}
-        <div className="text-center mb-20">
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-emerald-50 border border-emerald-100 text-[10px] font-black tracking-[0.3em] text-emerald-600 uppercase mb-6">
-            <Sparkles size={14} /> The Workflow
+        {/* Section Header: Centered & Refined */}
+        <div className="flex flex-col items-center text-center mb-24 max-w-2xl mx-auto">
+          <div className="flex items-center gap-3 mb-6">
+            <div className="w-6 h-[1.5px] bg-orange-600 rounded-full" />
+            <span className="text-[11px] font-bold text-orange-600 tracking-[0.3em] uppercase">
+              The workflow
+            </span>
+            <div className="w-6 h-[1.5px] bg-orange-600 rounded-full" />
           </div>
-          <h2 className="text-3xl md:text-5xl font-black text-gray-950 tracking-tighter uppercase leading-none">
-            How We <span className="text-emerald-500 italic">Restore</span> Order.
+          <h2 className="text-3xl md:text-5xl font-black text-gray-950 tracking-tight leading-tight mb-4">
+            How we <span className="text-orange-600 italic">restore</span> order.
           </h2>
         </div>
 
-        {/* Straight Line Process */}
+        {/* Process Grid: Simple & Bold */}
         <div className="relative">
-          {/* Connecting Line (Desktop) */}
-          <div className="absolute top-10 left-[10%] right-[10%] h-[2px] border-t-2 border-dashed border-gray-100 hidden lg:block" />
+          {/* Horizontal Decorative Line (Desktop) */}
+          <div className="absolute top-[40px] left-[15%] right-[15%] h-[1px] bg-gray-100 hidden lg:block" />
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-16 lg:gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-16 lg:gap-12">
             {steps.map((step, idx) => (
-              <div key={idx} className="relative group text-center">
-                <div className="flex flex-col items-center">
-                  
-                  {/* Icon Module */}
-                  <div className={`relative z-10 w-20 h-20 rounded-[28px] bg-white border border-gray-100 shadow-xl flex items-center justify-center mb-8 transition-all duration-500 group-hover:-translate-y-2 group-hover:rotate-6 ${step.color === 'emerald' ? 'text-emerald-600 group-hover:bg-emerald-600 group-hover:text-white' : 'text-amber-500 group-hover:bg-amber-500 group-hover:text-white'}`}>
+              <div key={idx} className="relative group text-center flex flex-col items-center">
+                
+                {/* Step Circle */}
+                <div className="relative z-10 w-20 h-20 rounded-full bg-white border border-gray-100 flex items-center justify-center mb-8 transition-all duration-500 group-hover:border-orange-600 group-hover:shadow-2xl group-hover:shadow-orange-600/10 group-hover:-translate-y-1">
+                  <div className="text-gray-400 transition-colors duration-500 group-hover:text-orange-600">
                     {step.icon}
-                    <div className="absolute -top-3 -right-3 w-8 h-8 rounded-full bg-gray-950 text-white text-[10px] font-black flex items-center justify-center border-4 border-white">
-                      {step.id}
-                    </div>
                   </div>
-
-                  {/* Text Content */}
-                  <div className="space-y-2">
-                    <h3 className="text-lg font-black text-gray-950 uppercase tracking-tight">{step.title}</h3>
-                    <p className="text-xs font-bold text-gray-400 uppercase tracking-widest leading-relaxed max-w-[150px]">{step.desc}</p>
+                  {/* ID Marker */}
+                  <div className="absolute -top-1 -right-1 w-7 h-7 rounded-full bg-gray-950 text-white text-[10px] font-bold flex items-center justify-center border-4 border-white">
+                    {step.id}
                   </div>
-
                 </div>
+
+                {/* Step Text */}
+                <div className="space-y-3">
+                  <h3 className="text-[18px] font-bold text-gray-950 tracking-tight">{step.title}</h3>
+                  <p className="text-gray-400 text-sm font-medium leading-relaxed max-w-[180px] mx-auto">{step.desc}</p>
+                </div>
+
               </div>
             ))}
           </div>
         </div>
 
-        {/* Simplified CTA */}
+        {/* Action: Centered Simple Button */}
         <div className="mt-24 flex justify-center">
           <button 
             onClick={() => setIsModalOpen(true)}
-            className="px-12 py-6 bg-gray-950 text-white rounded-2xl font-black text-[10px] uppercase tracking-[0.3em] hover:bg-emerald-600 transition-all shadow-2xl shadow-gray-900/10 active:scale-95 flex items-center justify-center gap-4 group cursor-pointer"
+            className="inline-flex items-center gap-3 px-10 py-5 bg-gray-950 text-white font-bold text-[13px] hover:bg-orange-600 transition-all rounded-xl shadow-xl shadow-gray-950/5 active:scale-95 group"
           >
-            Book appliance care Now <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
+            Book appliance care now <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
           </button>
         </div>
 
@@ -95,12 +96,10 @@ const RepairProcess = () => {
       <BookingModal 
         isOpen={isModalOpen} 
         onClose={() => setIsModalOpen(false)} 
-        serviceTitle="Appliance Repair" 
+        serviceTitle="Appliance repair" 
       />
     </section>
   );
 };
 
 export default RepairProcess;
-
-

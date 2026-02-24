@@ -1,180 +1,85 @@
 import { 
   WashingMachine, Refrigerator, Waves, Monitor, 
   Coffee, Snowflake, Microwave, Flame, Droplets, 
-  Wind, Fan, Cpu, ArrowRight, Sparkles
+  Wind, Fan, Cpu, ArrowRight
 } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const solutions = [
-  { 
-    id: "washing-machine",
-    idx: "01",
-    title: "Washing Machine", 
-    desc: "Drum & motor repair", 
-    icon: <WashingMachine size={24} />, 
-    image: "/washing.png" 
-  },
-  { 
-    id: "refrigerator",
-    idx: "02",
-    title: "Refrigerator", 
-    desc: "Cooling & compressor fix", 
-    icon: <Refrigerator size={24} />, 
-    image: "/refrigerator.png" 
-  },
-  { 
-    id: "dishwasher",
-    idx: "03",
-    title: "Dishwasher", 
-    desc: "Pump & leakage repair", 
-    icon: <Waves size={24} />, 
-    image: "/dish.png" 
-  },
-  { 
-    id: "television",
-    idx: "04",
-    title: "Television", 
-    desc: "Display & audio fix", 
-    icon: <Monitor size={24} />, 
-    image: "/tv.jpg" 
-  },
-  { 
-    id: "coffee-maker", 
-    idx: "05",
-    title: "Coffee Maker", 
-    desc: "Heater & pump service", 
-    icon: <Coffee size={24} />, 
-    image: "/coffee.jpg" 
-  },
-  { 
-    id: "air-conditioner", 
-    idx: "06",
-    title: "Air Conditioner", 
-    desc: "Gas refilling & PCB fix", 
-    icon: <Snowflake size={24} />, 
-    image: "/air.jpg" 
-  },
-  { 
-    id: "microwave-oven", 
-    idx: "07",
-    title: "Microwave Oven", 
-    desc: "Magnetron & panel fix", 
-    icon: <Microwave size={24} />, 
-    image: "/micro.jpg" 
-  },
-  { 
-    id: "oven-stove", 
-    idx: "08",
-    title: "Oven & Gas Stove", 
-    desc: "Burner & ignition repair", 
-    icon: <Flame size={24} />, 
-    image: "/Ove.jpg" 
-  },
-  { 
-    id: "water-purifier", 
-    idx: "09",
-    title: "Water Purifier", 
-    desc: "RO filter replacement", 
-    icon: <Droplets size={24} />, 
-    image: "/water.jpg" 
-  },
-  { 
-    id: "clothes-dryer", 
-    idx: "10",
-    title: "Clothes Dryer", 
-    desc: "Heating & belt repair", 
-    icon: <Wind size={24} />, 
-    image: "/clothes.jpg" 
-  },
-  { 
-    id: "kitchen-chimney", 
-    idx: "11",
-    title: "Kitchen Chimney", 
-    desc: "Deep cleaning & motor fix", 
-    icon: <Fan size={24} />, 
-    image: "/Kitchen.jpg" 
-  },
-  { 
-    id: "other-appliances",
-    idx: "12",
-    title: "Other Appliances", 
-    desc: "Mixers, irons & more", 
-    icon: <Cpu size={24} />, 
-    image: "/others.jpg" 
-  }
+  { id: "washing-machine", idx: "01", title: "Washing machine", desc: "Drum & motor repair", icon: <WashingMachine size={24} />, image: "/washing.png" },
+  { id: "refrigerator", idx: "02", title: "Refrigerator", desc: "Cooling & compressor fix", icon: <Refrigerator size={24} />, image: "/refrigerator.png" },
+  { id: "dishwasher", idx: "03", title: "Dishwasher", desc: "Pump & leakage repair", icon: <Waves size={24} />, image: "/dish.png" },
+  { id: "television", idx: "04", title: "Television", desc: "Display & audio fix", icon: <Monitor size={24} />, image: "/tv.jpg" },
+  { id: "coffee-maker", idx: "05", title: "Coffee maker", desc: "Heater & pump service", icon: <Coffee size={24} />, image: "/coffee.jpg" },
+  { id: "air-conditioner", idx: "06", title: "Air conditioner", desc: "Gas refilling & PCB fix", icon: <Snowflake size={24} />, image: "/air.jpg" },
+  { id: "microwave-oven", idx: "07", title: "Microwave oven", desc: "Magnetron & panel fix", icon: <Microwave size={24} />, image: "/micro.jpg" },
+  { id: "oven-stove", idx: "08", title: "Oven & gas stove", desc: "Burner & ignition repair", icon: <Flame size={24} />, image: "/Ove.jpg" },
+  { id: "water-purifier", idx: "09", title: "Water purifier", desc: "RO filter replacement", icon: <Droplets size={24} />, image: "/water.jpg" },
+  { id: "clothes-dryer", idx: "10", title: "Clothes dryer", desc: "Heating & belt repair", icon: <Wind size={24} />, image: "/clothes.jpg" },
+  { id: "kitchen-chimney", idx: "11", title: "Kitchen chimney", desc: "Deep cleaning & motor fix", icon: <Fan size={24} />, image: "/Kitchen.jpg" },
+  { id: "other-appliances", idx: "12", title: "Other appliances", desc: "Mixers, irons & more", icon: <Cpu size={24} />, image: "/others.jpg" }
 ];
 
 const RepairSolutions = () => {
   return (
-    <section className="py-24 md:py-40 bg-white relative overflow-hidden" id="repair-solutions">
-      {/* Dynamic Background Elements */}
-      <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-emerald-50/50 rounded-full blur-[120px] -mr-48 -mt-48 pointer-events-none" />
-      <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-amber-50/30 rounded-full blur-[100px] -ml-48 -mb-48 pointer-events-none" />
-
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="flex flex-col md:flex-row justify-between items-end mb-32 gap-8">
-          <div className="max-w-2xl">
-            <div className="inline-flex items-center gap-3 px-5 py-2.5 rounded-full bg-white border border-gray-100 text-[10px] font-black tracking-[0.3em] text-emerald-600 uppercase mb-8 shadow-sm">
-              <Sparkles size={14} /> Premium Catalog
-            </div>
-            <h2 className="text-4xl md:text-6xl font-black text-gray-950 tracking-tighter uppercase mb-6">
-              Expert <span className="text-emerald-500 italic">Repair</span> Solutions.
-            </h2>
+    <section className="py-24 md:py-40 bg-white" id="repair-solutions">
+      <div className="max-w-7xl mx-auto px-6 lg:px-12">
+        
+        {/* Header Section: Centered & Refined */}
+        <div className="flex flex-col items-center text-center mb-24 max-w-2xl mx-auto">
+          <div className="flex items-center gap-3 mb-6">
+            <div className="w-6 h-[1.5px] bg-orange-600 rounded-full" />
+            <span className="text-[11px] font-bold text-orange-600 tracking-[0.3em] uppercase">
+              Premium catalog
+            </span>
+            <div className="w-6 h-[1.5px] bg-orange-600 rounded-full" />
           </div>
-          <div className="max-w-xs pb-4">
-             <p className="text-gray-400 font-bold text-xs md:text-sm border-l-4 border-amber-500 pl-8 uppercase tracking-widest leading-relaxed">
-              Precision Appliance for every household appliance. We restore performance using 100% genuine parts.
-            </p>
-          </div>
+          <h2 className="text-3xl md:text-5xl font-black text-gray-950 tracking-tight leading-tight mb-4">
+            Expert repair <span className="text-orange-600 italic">solutions.</span>
+          </h2>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-y-32 gap-x-12 mt-20">
+        {/* Solutions Grid: Contemporary Cards */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-10 gap-y-20 mt-16">
           {solutions.map((item, idx) => (
-            <div key={idx} className="relative group">
-              {/* Floating ID Marker */}
-              <div className="absolute -top-16 left-8 text-6xl font-black text-gray-50 group-hover:text-emerald-50/50 transition-colors duration-700 italic select-none">
-                {item.idx}
-              </div>
-
-              {/* Card Container */}
-              <div className="relative">
-                {/* Main Image Stage */}
-                <div className="relative h-[400px] rounded-[60px] overflow-hidden shadow-2xl border-4 border-white transition-all duration-700 group-hover:-translate-y-4 group-hover:shadow-[0_40px_80px_rgba(0,0,0,0.15)]">
-                  <img loading="lazy" src={item.image} alt={item.title} className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" />
-                  <div className="absolute inset-0 bg-gradient-to-t from-gray-950/40 via-transparent to-transparent" />
-                  
-                  {/* Icon Badge */}
-                  <div className="absolute top-8 left-8 w-16 h-16 rounded-[24px] bg-white/90 backdrop-blur-xl flex items-center justify-center text-gray-950 shadow-xl border border-white/50 transition-all duration-500 group-hover:bg-emerald-600 group-hover:text-white group-hover:rotate-12">
-                    {item.icon}
-                  </div>
+            <Link 
+              key={idx} 
+              to={`/service/${item.id}`}
+              className="group flex flex-col transition-all duration-500"
+            >
+              {/* Image Visual with ID Badge */}
+              <div className="relative aspect-[4/3] rounded-3xl overflow-hidden bg-gray-100 mb-8 border border-gray-50 shadow-sm transition-all duration-700 group-hover:shadow-2xl group-hover:shadow-orange-600/10 group-hover:-translate-y-1">
+                <img 
+                  loading="lazy" 
+                  src={item.image} 
+                  alt={item.title} 
+                  className="w-full h-full object-cover transition-transform duration-[1500ms] group-hover:scale-110" 
+                />
+                
+                {/* Clean ID Badge */}
+                <div className="absolute top-6 left-6 bg-white/90 backdrop-blur-md px-4 py-2 rounded-xl shadow-xl border border-white/50">
+                  <span className="text-orange-600 font-black text-xs italic">{item.idx}</span>
                 </div>
 
-                {/* Floating Glass Content Panel */}
-                <div className="absolute -bottom-16 left-6 right-6 bg-white/95 backdrop-blur-2xl p-8 rounded-[40px] shadow-2xl border border-white transform transition-all duration-700 ease-out group-hover:-translate-y-6">
-                  <div className="flex flex-col gap-1 mb-6">
-                    <h3 className="text-xl font-black text-gray-950 uppercase tracking-tighter leading-none group-hover:text-emerald-600 transition-colors">
-                      {item.title}
-                    </h3>
-                    <p className="text-[10px] font-black text-gray-400 uppercase tracking-[0.2em]">
-                      {item.desc}
-                    </p>
-                  </div>
+                {/* Subtle Hover Overlay */}
+                <div className="absolute inset-0 bg-orange-600/0 group-hover:bg-orange-600/5 transition-colors duration-500" />
+              </div>
 
-                  <div className="flex items-center justify-between">
-                    <Link 
-                      to={`/service/${item.id}`} 
-                      className="inline-flex items-center gap-2 text-[10px] font-black uppercase tracking-[0.25em] text-gray-950 group/link"
-                    >
-                      Explore Details
-                      <div className="w-8 h-8 rounded-full bg-gray-50 flex items-center justify-center text-amber-500 group-hover/link:bg-emerald-600 group-hover/link:text-white transition-all">
-                        <ArrowRight size={14} />
-                      </div>
-                    </Link>
-                    <div className="w-2 h-2 rounded-full bg-gray-100 group-hover:bg-emerald-500 transition-colors" />
+              {/* Text Content Area */}
+              <div className="flex flex-col gap-2 px-2">
+                <div className="flex items-center justify-between gap-4">
+                  <h3 className="text-xl font-bold text-gray-950 group-hover:text-orange-600 transition-colors">
+                    {item.title}
+                  </h3>
+                  <div className="w-8 h-8 rounded-full bg-gray-50 flex items-center justify-center text-gray-400 group-hover:bg-orange-600 group-hover:text-white transition-all shadow-sm">
+                    <ArrowRight size={16} />
                   </div>
                 </div>
+                <p className="text-[12px] font-bold text-gray-400 uppercase tracking-widest">
+                  {item.desc}
+                </p>
               </div>
-            </div>
+            </Link>
           ))}
         </div>
       </div>
@@ -182,7 +87,4 @@ const RepairSolutions = () => {
   );
 };
 
-
 export default RepairSolutions;
-
-
